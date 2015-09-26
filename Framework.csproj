@@ -37,6 +37,13 @@
     <Reference Include="Common.Logging.Core">
       <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SistemasExemplo\DDD\C#\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\SistemasExemplo\DDD\C#\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -75,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arquitetura\DDD\Aplicacao\Implementacao\AplicacaoServicoBase.cs" />
+    <Compile Include="Arquitetura\DDD\Aplicacao\Interfaces\IAplicacaoBase.cs" />
+    <Compile Include="Arquitetura\DDD\Dominio\Implementacao\EF\ServicoDeDominioBase.cs" />
+    <Compile Include="Arquitetura\DDD\Dominio\Interfaces\Repositorios\IRepositorioBase.cs" />
+    <Compile Include="Arquitetura\DDD\Dominio\Interfaces\ServicosDeDominio\IServicoDeDominioBase.cs" />
+    <Compile Include="Arquitetura\DDD\InfraEstrutura\Repositorios\EF\RepositorioBase.cs" />
     <Compile Include="Log4NetImpl\Log4NetHelper.cs" />
     <Compile Include="Persistencia\Implementacao\SpringNetComNHibernate\DaoAbstratoGenerico.cs" />
     <Compile Include="Persistencia\Interfaces\IDaoGenerico.cs" />
@@ -89,8 +102,10 @@
     <Compile Include="Validacao\ValidadorDeEntidadeResultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetPath)"  "$(SolutionDir)bin" /y</PostBuildEvent>

@@ -55,7 +55,7 @@ namespace Framework.Arquitetura.DDD.Aplicacao.Implementacao
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            this.dominio.Dispose();
         }
     }
 }
